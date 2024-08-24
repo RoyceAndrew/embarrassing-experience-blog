@@ -8,6 +8,9 @@
     text-decoration: none;
 }
 
+:root {
+    --white: rgba(255, 255, 255, 0.2)
+}
 
 body {
     display: flex;
@@ -69,11 +72,7 @@ body {
     max-width: 600px;
     min-width: 300px;
     width: auto;
-    border-left: 1px solid grey;
-    height: auto;
-    padding-top: 15px;
-    border-right: 1px solid grey;
-    height: 200vh;
+    height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -89,6 +88,8 @@ body {
     padding-left: 10px;
     padding-bottom: 35px;
     border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
 } 
 
 .right {
@@ -132,7 +133,7 @@ body {
 }
 
 #home .abp {
-    margin: 15px
+    margin: 15px;
 }
 
 #home .gif {
@@ -141,10 +142,82 @@ body {
     width: auto;
 }
 
+.abp a {
+    text-decoration: underline;
+    transition: ease-out 0.3s;
+}
+
+.abp a:hover {
+    color: grey;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 60px;
+}
+
+.fuw {
+    margin-top: 5px;
+    max-width: 600px;
+    width: auto;
+    min-width: 500px;
+    height: 300px;
+    color: white;
+    background-color: grey;
+    display: flex;
+    justify-content: start;
+    font-size: 16px;
+    padding-top: 0px;
+}
+
+.submit {
+    background-color: black;
+    border: 2px solid grey;
+    margin-top: 20px;
+    height: 50px;
+    border-radius: 10px;
+    transition: ease-out 0.3s;
+}
+
+.fuw::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.submit:hover {
+    background-color: var(--white);
+}
+
+.exp {
+    width: 100%;
+}
+
+.delete {
+    background-color: red;
+    width: 100px;
+    font-size: 14px;
+    height: 30px;
+    margin-top: 10px;
+    border-color: grey;
+}
+
+.border {
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+}
+
+.gap {
+    margin-top: 15px;
+}
+
 @media (max-width: 1100px) {
     .hidden {
         visibility: collapse;
         font-size: 0px;
+    }
+
+    body {
+        overflow-x: hidden;
     }
 
     #home {

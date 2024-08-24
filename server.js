@@ -39,6 +39,15 @@ app.get("/post", async (req, res) => {
   }
 })
 
+app.post("/post", async (req, res) => {
+  try {
+    const response = await axios.post("http://localhost:3000/post", req.body);
+    res.redirect("/post");
+  } catch (error) {
+    console.log(500)
+  }
+})
+
 
 app.listen(port, () => {
     console.log(`your server has been listened on port ${port}`);

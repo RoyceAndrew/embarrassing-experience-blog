@@ -4,7 +4,9 @@
         <p class="big">Recent Post</p>
         </div>
         <div id="rec">
-            <% eb.forEach(function(e) { %>
+            <% eb.sort(function(a, b) { return b.id - a.id });%>
+            <% const limitedEb = eb.slice(0, 8);%>
+            <% limitedEb.forEach(function(e) {  %>
                 <a href="/#<%=e.id%>"><p class="tes"><%= e.experience.slice(0, 49) %></p></a>
              <% }) %>
         </div>

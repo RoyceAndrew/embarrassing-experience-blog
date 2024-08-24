@@ -29,6 +29,18 @@ app.get("/", (req, res) => {
    res.json(EES)
 })
 
+app.post("/post", (req, res) => {
+    
+    const enew = {
+        id: EES.length+2,
+        experience: req.body.alex,
+        date: new Date().toDateString(),
+    }
+    EES.push(enew);
+    res.json(EES);
+    console.log(enew);
+})
+
 app.listen(port, () => {
     console.log(`your server has been listened on port ${port}`);
 })
