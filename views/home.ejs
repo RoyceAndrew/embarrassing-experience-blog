@@ -1,0 +1,9 @@
+<%- include("partials/header.ejs")  %> 
+<section id="home">
+  <% eb.forEach(function(e) { %>
+    <div><p id="<%= e.id %>"><%= e.experience %></p>
+      <span class="right"><p><%= e.date %></p></span></div>
+ <% }) %>
+</section>
+
+<%- include("partials/footer.ejs") %>

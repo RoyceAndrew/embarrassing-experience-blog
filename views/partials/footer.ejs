@@ -1,0 +1,14 @@
+<section id="recent">
+    <div>
+        <div>
+        <p class="big">Recent Post</p>
+        </div>
+        <div id="rec">
+            <% eb.forEach(function(e) { %>
+                <a href="/#<%=e.id%>"><p class="tes"><%= e.experience.slice(0, 49) %></p></a>
+             <% }) %>
+        </div>
+    </div>
+</section>
+</body>
+</html>
