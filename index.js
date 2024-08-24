@@ -29,8 +29,7 @@ app.get("/", (req, res) => {
    res.json(EES)
 })
 
-app.post("/post", (req, res) => {
-    
+app.post("/post", (req, res) => { 
     const enew = {
         id: EES.length+2,
         experience: req.body.alex,
@@ -38,7 +37,13 @@ app.post("/post", (req, res) => {
     }
     EES.push(enew);
     res.json(EES);
-    console.log(enew);
+})
+
+app.delete("/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const findId = EES.findIndex((ee) => ee.id === id);
+    EES.splice(findId, 1);
+    res.json("success")
 })
 
 app.listen(port, () => {

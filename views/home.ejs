@@ -3,7 +3,9 @@
   <% eb.forEach(function(e) { %>
     <div class="exp"><p id="<%= e.id %>"><%= e.experience %></p>
       <span class="right"><p><%= e.date %></p></span>
-      <button formmethod="delete" class="delete">Delete</button>
+      <form method="post" action="/delete/<%= e.id%>">
+        <button type="submit" class="delete">Delete</a>
+      </form>
     </div>
       
  <% }) %>

@@ -48,6 +48,15 @@ app.post("/post", async (req, res) => {
   }
 })
 
+app.post("/delete/:id", async (req, res) => {
+  try {
+    await axios.delete(`http://localhost:3000/${req.params.id}`);
+    res.redirect("/");
+  } catch (error) {
+    console.error("Error deleting data", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
 
 app.listen(port, () => {
     console.log(`your server has been listened on port ${port}`);

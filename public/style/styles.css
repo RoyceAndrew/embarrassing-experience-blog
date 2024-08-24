@@ -72,10 +72,13 @@ body {
     max-width: 600px;
     min-width: 300px;
     width: auto;
-    height: 100%;
+    height: fit-content;
+    min-height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
 }
 
 .wrapper {
@@ -88,8 +91,7 @@ body {
     padding-left: 10px;
     padding-bottom: 35px;
     border-bottom: 1px solid grey;
-    border-right: 1px solid grey;
-    border-left: 1px solid grey;
+    
 } 
 
 .right {
@@ -145,6 +147,7 @@ body {
 .abp a {
     text-decoration: underline;
     transition: ease-out 0.3s;
+    color: blue;
 }
 
 .abp a:hover {
