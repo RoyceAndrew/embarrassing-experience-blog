@@ -49,7 +49,7 @@ app.post("/post", async (req, res) => {
 })
 
 app.post("/delete/:id", async (req, res) => {
-  try {
+    try {
     await axios.delete(`http://localhost:3000/${req.params.id}`);
     res.redirect("/");
   } catch (error) {

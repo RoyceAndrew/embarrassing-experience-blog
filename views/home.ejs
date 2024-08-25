@@ -3,12 +3,26 @@
   <% eb.forEach(function(e) { %>
     <div class="exp"><p id="<%= e.id %>"><%= e.experience %></p>
       <span class="right"><p><%= e.date %></p></span>
-      <form method="post" action="/delete/<%= e.id%>">
+      <div class="buttonn">
+      <form method="post" action="/delete/<%= e.id%>" onsubmit="return confirmDeletion(event)">
         <button type="submit" class="delete">Delete</a>
       </form>
+    </div>
     </div>
       
  <% }) %>
 </section>
 
 <%- include("partials/footer.ejs") %>
+
+<script>
+  function confirmDeletion(event) {
+    var confirmation = prompt("Are you sure to delete this post? Type 'yes' if you are sure.");
+    if (confirmation !== 'yes') {
+      alert("Delete canceled");
+      event.preventDefault();
+      return false;
+    }
+    return true;
+  }
+</script>
