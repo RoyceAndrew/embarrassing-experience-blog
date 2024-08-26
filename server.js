@@ -58,6 +58,27 @@ app.post("/delete/:id", async (req, res) => {
   }
 });
 
+app.get("/:id", async (req, res) => {
+  try {
+    const response = await axios.get("http://localhost:3000/list/"+ req.params.id);
+    const result = response.data;
+    res.render("modify.ejs", {eb: result, expe: result.experience});
+  } catch(error) {
+    console.log(TypeError)
+  }
+})
+
+app.post("/:id", async (req, res) => {
+  try {
+    await axios.patch("http://localhost:3000/modify/"+ req.params.id, req.body);
+    res.redirect("/");
+  } catch(error) {
+    console.log(TypeError)
+  }
+})
+
+
+
 app.listen(port, () => {
     console.log(`your server has been listened on port ${port}`);
 })

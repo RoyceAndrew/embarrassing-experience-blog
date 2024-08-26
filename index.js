@@ -49,6 +49,12 @@ app.get("/", (req, res) => {
    res.json(EES)
 })
 
+app.get("/list/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const findId = EES.findIndex((ee) => ee.id === id);
+    res.json(EES[findId])
+})
+
 app.post("/post", (req, res) => { 
     const enew = {
         id: EES.length+2,
@@ -64,6 +70,19 @@ app.delete("/:id", (req, res) => {
     const findId = EES.findIndex((ee) => ee.id === id);
     EES.splice(findId, 1);
     res.json("success")
+})
+
+app.patch("/modify/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const findId = EES.find((ee) => ee.id === id);
+    var editE = {
+        id: findId.id,
+        experience: req.body.exp || findId.experience,
+        date: findId.date
+    };
+    const findLoc = EES.findIndex((ee) => ee.id === id);
+    EES[findLoc] = editE;
+    res.json(editE)
 })
 
 app.listen(port, () => {

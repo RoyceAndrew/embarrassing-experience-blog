@@ -5,8 +5,9 @@
       <span class="right"><p><%= e.date %></p></span>
       <div class="buttonn">
       <form method="post" action="/delete/<%= e.id%>" onsubmit="return confirmDeletion(event)">
-        <button type="submit" class="delete">Delete</a>
+        <button type="submit" class="delete">Delete</button>
       </form>
+      <a class="edit" href="/<%= e.id %>">Edit</a>
     </div>
     </div>
       

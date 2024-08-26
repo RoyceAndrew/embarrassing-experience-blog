@@ -90,14 +90,15 @@ body {
 #home > div {
     padding-top: 15px;
     padding-left: 10px;
-    padding-bottom: 35px;
+    padding-bottom: 15px;
+    padding-right: 10px;
     border-bottom: 1px solid grey;
     
 } 
 
 .right {
     float: right;
-    padding-top: 10px;
+    padding-top: 15px;
     padding-right: 5px;
 }
 
@@ -203,6 +204,7 @@ body {
     height: 30px;
     margin-top: 10px;
     border-color: grey;
+    cursor: pointer;
 }
 
 .border {
@@ -214,7 +216,32 @@ body {
     margin-top: 15px;
 }
 
+.buttonn {
+    display: flex;
+    flex-direction: row;
+}
 
+.edit {
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 2px solid grey;
+    border-bottom-color: rgba(0, 0, 0, 0.5);
+    border-right-color: rgba(0, 0, 0, 0.5);
+    height: 30px;
+    width: 100px;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.edit:active {
+    border: 2px solid grey;
+    border-top-color: rgba(0, 0, 0, 0.5);
+    border-left-color: rgba(0, 0, 0, 0.5);
+}
 
 @media (max-width: 1100px) {
     .hidden {
